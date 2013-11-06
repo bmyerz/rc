@@ -4,9 +4,13 @@
 
 [alias]
     com = commit
-    st = status
-    br = branch
+    st = "status"
+    brr = "for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' --count=35"
+    br = branch --color=auto
     co = checkout
     df = "diff --color-words"
     lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+    lgp = "log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 
+[merge]
+    tool = vimdiff

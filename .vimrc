@@ -105,8 +105,11 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+"normal tab for editing Makefile
+autocmd FileType make setlocal noexpandtab
+
 "numbered lines
-set number
+"set number
 
 "horizontal line on cursor
 set cursorline
@@ -118,19 +121,81 @@ set t_Co=256
 
 colorscheme jellybeans
 syntax on
+filetype indent on
 
-imap jk <Esc>
 
 map <C-n> :tabn<cr>
 map <C-p> :tabp<cr>
 
+imap jk <Esc>
 
 "extra filename extensions
 filetype on
 au BufNewFile,BufRead *.gc set filetype=c
 au BufNewFile,BufRead *.cunroll set filetype=c
 
-"turn cursorline off for latex, because it is slow for long soft-wrapped lines
+"C++11 syntax highlighting
+au BufNewFile,BufRead *.cpp set syntax=cpp11
+au BufNewFile,BufRead *.hpp syntax=cpp11
+
+"cmake syntax
+au BufNewFile,BufRead CMakeLists.txt set syntax=cmake-syntax
+
+autocmd FileType c setlocal tabstop=2
+autocmd FileType cpp setlocal tabstop=2
+autocmd FileType c setlocal shiftwidth=2
+autocmd FileType cpp setlocal shiftwidth=2
+autocmd FileType h setlocal tabstop=2
+autocmd FileType hpp setlocal tabstop=2
+autocmd FileType h setlocal shiftwidth=2
+autocmd FileType hpp setlocal shiftwidth=2
+
+autocmd Filetype cmake setlocal tabstop=2
+autocmd Filetype cmake setlocal shiftwidth=2
+
+
+autocmd FileType rb setlocal tabstop=2
+autocmd FileType rb setlocal shiftwidth=2
+
+"turn cursorline off for latex, because it is slow
 autocmd FileType tex setlocal nocursorline
 "hard wrap to width 70 in latex (easier sharing and diffs)
 autocmd FileType tex setlocal textwidth=70
+
+"on buffer load update ctags
+"au BufWinEnter . :UpdateTags
+
+"macros
+"todo, use one command and use file extension
+"comment
+
+
+""Make""
+" Automatically open, but do not go to (if there are errors) the quickfix /
+" location list window, or close it when is has become empty.
+"
+" Note: Must allow nesting of autocmds to enable any customizations for
+"quickfix
+" buffers.
+" Note: Normally, :cwindow jumps to the quickfix window if the command opens
+"it
+" (but not if it's already open). However, as part of the autocmd, this
+"doesn't
+" seem to happen.
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+
+
+"enable NeoComplCache, which caches auto completions
+let g:neocomplcache_enable_at_startup = 1
+
+
+" Pathogen source
+call pathogen#infect()
+
+
+"syntastic
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
+"try to get the damn c++11 syntax to work
+let c_no_curly_error=1
+
