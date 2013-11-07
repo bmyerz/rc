@@ -1,5 +1,5 @@
 BACKUP_PREFIX=${HOME}/.bm-environment-bkups
-BACKUP_DATE=`date +'%y.%m.%d_%H:%M:%S'`
+BACKUP_DATE:=$(shell date +'%y.%m.%d_%H:%M:%S')
 BACKUP_DIR=${BACKUP_PREFIX}_${BACKUP_DATE}
 
 install:
@@ -7,7 +7,7 @@ install:
 	mkdir -p ${BACKUP_DIR}
 	mv ${HOME}/.vim ${BACKUP_DIR}
 	mv ${HOME}/.gitconfig ${BACKUP_DIR}
-	mv ${HOME}/.vimrc
+	mv ${HOME}/.vimrc ${BACKUP_DIR}
 	# symlink to these
 	ln -s `pwd`/.vim ${HOME}/.vim
 	ln -s `pwd`/.gitconfig ${HOME}/.gitconfig
