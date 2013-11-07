@@ -1,6 +1,6 @@
 [user]
-	name = Brandon Myers
-    email = bdmyers@cs.washington.edu
+	name = user
+    email = user@example.com
 
 [alias]
     com = commit
