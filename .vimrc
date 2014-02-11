@@ -21,6 +21,10 @@ set nocompatible
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+
+" make pasting work magically right
+set paste
+
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
 else
