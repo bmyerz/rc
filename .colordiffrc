@@ -1,0 +1,4 @@
+#be like git diff
+newtext=green
+oldtext=red
+diffstuff=cyan
