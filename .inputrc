@@ -1,2 +1,3 @@
 TAB: complete
+# shift-TAB for cycling style autocomplete
 "\e[Z": menu-complete
