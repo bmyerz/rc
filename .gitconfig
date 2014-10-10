@@ -5,7 +5,7 @@
 [alias]
     com = commit
     st = "status"
-    brr = "for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' --count=35"
+    brr = for-each-ref --sort=-committerdate refs/heads/ --format='(%(authordate:relative)) \t %(refname:short)'
     br = branch --color=auto
     co = checkout
     df = "diff --color-words"
