@@ -53,9 +53,9 @@ alias autopep8='autopep8 --in-place'
 alias sed='sed -E'
 alias grep='egrep'
 
-
-# Mac text editors
-alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
-alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
-alias macvim=/Applications/MacVim.app/Contents/MacOS/MacVim
-
+if [[ "$(uname)" == "Darwin" ]]; then
+    # Mac text editors
+    alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
+    alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+    alias macvim=/Applications/MacVim.app/Contents/MacOS/MacVim
+fi
