@@ -12,4 +12,6 @@ install:
 	ln -s `pwd`/.vim ${HOME}/.vim
 	ln -s `pwd`/.gitconfig ${HOME}/.gitconfig
 	ln -s `pwd`/.vimrc ${HOME}/.vimrc
+	ln -s `pwd`/.bashrc ${HOME}/.bashrc
+	ln -s `pwd`/.bash_aliases ${HOME}/.bash_aliases
 
