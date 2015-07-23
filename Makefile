@@ -7,7 +7,8 @@ dotfiles=\
 .gitconfig \
 .vimrc \
 .bashrc \
-.bash_aliases
+.bash_aliases \
+.tmux.conf
 
 
 install:
