@@ -42,6 +42,11 @@ alias diff='colordiff'
 alias less='less -R'
 # if ... screen size change tmux -2 attach -d,  which detaches others
 alias rm='rm -i'
+alias cloc='cloc-1.55.pl'
+alias sq='squeue'
+alias a='tmux attach'
+alias l='tmux list-sessions'
+alias hig='history | grep'
 
 
 
