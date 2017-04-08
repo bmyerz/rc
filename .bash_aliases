@@ -61,6 +61,6 @@ alias grep='egrep'
 if [[ "$(uname)" == "Darwin" ]]; then
     # Mac text editors
     alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
-    alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
+    #alias vim=/Applications/MacVim.app/Contents/MacOS/Vim
     alias macvim=/Applications/MacVim.app/Contents/MacOS/MacVim
 fi

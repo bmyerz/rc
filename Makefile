@@ -8,7 +8,9 @@ dotfiles=\
 .vimrc \
 .bashrc \
 .bash_aliases \
-.tmux.conf
+.tmux.conf \
+.tmux-osx.conf \
+.zshrc
 
 
 install:
@@ -18,4 +20,6 @@ install:
 
 	# symlink to these
 	for fn in ${dotfiles}; do ln -s `pwd`/$$fn ${HOME}/$$fn; done
+
+	echo "Now please do manually: install zsh, chsh to zsh, and install oh-my-zsh"
 
