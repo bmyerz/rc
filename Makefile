@@ -10,7 +10,8 @@ dotfiles=\
 .bash_aliases \
 .tmux.conf \
 .tmux-osx.conf \
-.zshrc
+.zshrc \
+.emacs
 
 
 install:
