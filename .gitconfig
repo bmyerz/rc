@@ -1,6 +1,6 @@
 [user]
 	name = Brandon Myers
-    email = bdmyers@cs.washington.edu
+	email = brandon-d-myers@uiowa.edu
 
 [alias]
     com = commit
@@ -16,6 +16,9 @@
     outgoing = "!(git fetch --quiet && git log --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %ar%Creset' $(git rev-parse --abbrev-ref --symbolic-full-name @{u})..)"
     incoming = "!(git fetch --quiet && git log --pretty=format:'%C(yellow)%h %C(red)%an %C(cyan)%d%Creset %s %C(white)- %ar%Creset' ..$(git rev-parse --abbrev-ref --symbolic-full-name @{u}))"
     grep = grep -Ii
+    radd = "!f() { git remote add \"$1\" \"$2\"; }; f"
+    # set a remote to read only
+    readonly = "!f() { git remote set-url --push \"$1\" READ-ONLY; }; f"
     
 
 [merge]
@@ -23,3 +26,8 @@
 
 [push]
     default = simple
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
