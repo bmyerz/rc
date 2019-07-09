@@ -10,3 +10,4 @@ My work environment: vim, bash, git configs
 3. `cd rc`
 4. `make install`
 5. `wget https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -O ~/.git-completion.bash`
+6. follow instructions that were printed after step 4
