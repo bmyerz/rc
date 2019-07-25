@@ -10,8 +10,10 @@ dotfiles=\
 .bash_aliases \
 .tmux.conf \
 .tmux-osx.conf \
-.zshrc \
-.emacs
+.zshrc 
+
+# have replaced emacs with spacemacs so no longer use .emacs file
+#.emacs
 
 
 install:
